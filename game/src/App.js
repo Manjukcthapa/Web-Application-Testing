@@ -39,11 +39,18 @@ class App extends Component {
     }
   };
 
+  handleHit = () => {
+    this.setState({
+      balls: 0,
+      strikes: 0
+    });
+  }
+
   render() {
     return (
       <div>
         <Display game={this.state} />
-        <Dashboard onBall={this.handleBall} onstrikes={this.handleStrikes}  onfoul = {this. handleFoul}/>
+        <Dashboard onBall={this.handleBall} onstrikes={this.handleStrikes}  onFoul = {this. handleFoul}/>
       </div>
     );
   }

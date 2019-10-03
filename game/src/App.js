@@ -13,12 +13,7 @@ class App extends Component {
     };
   }
 
-  handleReset = e => {
-    this.setState({
-      balls: 0,
-      strikes: 0
-    });
-  };
+ 
 
   handleBall = e => {
     if (this.state.balls < 3) {
@@ -31,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Display reset={handleReset} game={this.state} />
+        <Display  game={this.state} />
         <Dashboard onBall={this.handleBall} />
       </div>
     );

@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Display from "./Component/Display"
 import './App.css';
 
 class App extends Component {
+  construction(){
+    super(),
+    this.state = {
+
+    }
+
+  }
   render() {
     return (
-      <div className="App">
-        
+      <div >
+        <Display/>
       </div>
     );
   }

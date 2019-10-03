@@ -13,20 +13,20 @@ class App extends Component {
     };
   }
 
-  handleBall = () => {
-    if (this.state.balls < 3) {
+  handleBall = (e) => {
+    if (this.state.balls < 4) {
       this.setState(prevState => {
         return { balls: prevState.balls + 1 };
       });
-    }
+    }else this.handleHit(e)
   };
 
-  handleStrikes = () => {
-    if (this.state.strikes < 2) {
+  handleStrikes = (e) => {
+    if (this.state.strikes < 3) {
       this.setState(prevState => {
         return { strikes: prevState.strikes + 1 };
       });
-    }
+    }else this.handleHit(e)
   };
 
   handleFoul = () => {
@@ -44,13 +44,19 @@ class App extends Component {
       balls: 0,
       strikes: 0
     });
-  }
+  };
 
   render() {
     return (
       <div>
         <Display game={this.state} />
-        <Dashboard onBall={this.handleBall} onstrikes={this.handleStrikes}  onFoul = {this. handleFoul}/>
+        <Dashboard
+          onBall={this.handleBall}
+          onstrikes={this.handleStrikes}
+          onFoul={this.handleFoul}
+          onHit={this.handleHit}
+
+        />
       </div>
     );
   }

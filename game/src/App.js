@@ -13,30 +13,33 @@ class App extends Component {
     };
   }
 
- 
-
   handleBall = e => {
     if (this.state.balls < 3) {
       this.setState(prevState => {
         return { balls: prevState.balls + 1 };
       });
-    } 
+    }
   };
 
   handleStrikes = e => {
-    if (this.state.strikes<2) {
+    if (this.state.strikes < 2) {
       this.setState(prevState => {
-        return {balls:prevState.balls +1};
-      })
-
+        return { strikes: prevState.strikes + 1 };
+      });
+    
     }
-  }
+  };
+
+ 
 
   render() {
     return (
       <div>
-        <Display  game={this.state} />
-        <Dashboard onBall={this.handleBall} strikes = {this.state.handleStrikes }/>
+        <Display game={this.state} />
+        <Dashboard
+          onBall={this.handleBall}
+          onstrikes={this.handleStrikes}
+        />
       </div>
     );
   }

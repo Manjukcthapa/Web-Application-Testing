@@ -20,10 +20,10 @@ margin-left:70px;
 const Dashboard = props => {
   return (
     <Div>
-      <Button onClick={props.onstrikes}>strike</Button>
-      <Button onClick={props.onBall}>ball</Button>
-      <Button onClick={props.onFoul}>foul</Button>
-      <Button onClick={props.onHit}>hit</Button>
+      <Button data-testid="strike-button" onClick={props.onstrikes}>strike</Button>
+      <Button  data-testid="ball-button" onClick={props.onBall}>ball</Button>
+      <Button  data-testid="foul-button" onClick={props.onFoul}>foul</Button>
+      <Button  data-testid="hit-button" onClick={props.onHit}>hit</Button>
     </Div>
   );
 };

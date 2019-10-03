@@ -3,17 +3,17 @@ import Display from "./Component/Display"
 import './App.css';
 
 class App extends Component {
-  construction(){
-    super(),
+  constructor() {
+    super();
     this.state = {
-
-    }
-
+      balls:0,
+      strikes:0
+    };
   }
   render() {
     return (
       <div >
-        <Display/>
+        <Display game={this.state}/>
       </div>
     );
   }

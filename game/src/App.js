@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Display from "./Component/Display"
+import Dashboard from "./Component/Dashboard"
+
 import './App.css';
 
 class App extends Component {
@@ -14,6 +16,7 @@ class App extends Component {
     return (
       <div >
         <Display game={this.state}/>
+        <Dashboard/>
       </div>
     );
   }

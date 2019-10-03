@@ -20,14 +20,23 @@ class App extends Component {
       this.setState(prevState => {
         return { balls: prevState.balls + 1 };
       });
-    } else this.handleReset(e);
+    } 
   };
+
+  handleStrikes = e => {
+    if (this.state.strikes<2) {
+      this.setState(prevState => {
+        return {balls:prevState.balls +1};
+      })
+
+    }
+  }
 
   render() {
     return (
       <div>
         <Display  game={this.state} />
-        <Dashboard onBall={this.handleBall} />
+        <Dashboard onBall={this.handleBall} strikes = {this.state.handleStrikes }/>
       </div>
     );
   }
